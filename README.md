@@ -113,3 +113,7 @@ helm upgrade --install rust-api . --values values.yaml
 ![kubectl get all](image.png)
 ##### 리소스 분리 확인
 ![alt text](image-2.png)
+
+
+### 인프라 구성도
+![alt text](Infra.drawio.png)
