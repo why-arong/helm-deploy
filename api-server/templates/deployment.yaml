@@ -16,6 +16,8 @@ spec:
         app: {{ include "api-server.name" . | quote }}
         release: {{ .Release.Name | quote }}
     spec:
+      nodeSelector:  
+        app: api-server 
       containers:
         - name: api-server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

@@ -39,3 +39,5 @@ postgresql:
     accessModes:
       - ReadWriteOnce
     size: 1Gi
+  nodeSelector:
+    app: db

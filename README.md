@@ -3,7 +3,7 @@
 이 프로젝트는 `Terraform`을 사용하여 `AWS EKS` 클러스터를 자동으로 구성하고, `Kubernetes`에서 **Rust**로 작성된 API 서버와 PostgreSQL 데이터베이스를 `Helm Chart`로 배포합니다.
 
 API 서버에 대한 정보는 아래의 repo를 참고해주세요.
-https://github.com/why-arong/api-server?tab=readme-ov-file
+##### https://github.com/why-arong/api-server
 
 
 #### 목표
@@ -51,14 +51,14 @@ https://github.com/why-arong/api-server?tab=readme-ov-file
 1. AWS 인증
 
 이 프로젝트에서 저는 HCP(HashiCorp Cloud Platform)의 AWS 계정의 환경변수를 저장 기능을 이용했습니다.
-(terraform state도 여기서 저장됩니다.)
+https://app.terraform.io/app
+(terraform state도 이곳에 저장됩니다.)
 
 하지만, AWS CLI 를 이용하고자 한다면 아래의 명령어를 이용하면 됩니다.
 
 ```
 aws configure
 ```
-
     
 2. Terraform 실행:
 
@@ -66,9 +66,14 @@ aws configure
 terraform init
 terraform apply -auto-approve
 ```
+####  테스트
+- EKS 클러스터가 정상적으로 생성되었는 지 확인
+![aws eks](image-1.png)
+- 클러스터 리소스 상태 확인
+![kubectl get all](image.png)
 
 ### 2. 애플리케이션 배포
-
+![alt text](image-2.png)
 **Helm Chart 구성**
 - **Rust API 서버:**
     -  `LoadBalancer` 서비스를 통해 외부 트래픽 허용.
