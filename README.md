@@ -93,10 +93,10 @@ postgresql 배포를 위해 **Bitnami Helm Chart**를 사용했습니다.
 helm upgrade --install rust-api . --values values.yaml
 ```
 #### 테스트
-- API 서버 Health Check 
+#### API 서버 Health Check 
 ![alt text](image-4.png)
 
-- API 서버 CRUD
+####  API 서버 CRUD
 1. 사용자 생성
 ![alt text](image-5.png)
 
@@ -109,7 +109,7 @@ helm upgrade --install rust-api . --values values.yaml
 4.사용자 삭제
 ![alt text](image-10.png)
 
-- 클러스터 리소스 상태 확인
+##### 클러스터 리소스 상태 확인
 ![kubectl get all](image.png)
-- 리소스 분리 확인
+##### 리소스 분리 확인
 ![alt text](image-2.png)
