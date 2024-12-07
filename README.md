@@ -116,4 +116,4 @@ helm upgrade --install rust-api . --values values.yaml
 
 
 ### 인프라 구성도
-![alt text](Infra.drawio.png)
+![alt text](newInfra.drawio.png)
