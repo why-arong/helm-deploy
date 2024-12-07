@@ -43,7 +43,7 @@ API 서버에 대한 정보는 아래의 repo를 참고해주세요.
     - 최소 1대에서 최대 2대까지 Auto Scaling.
     - PostgreSQL 배치로 데이터베이스 워크로드 처리.
 - **리소스 격리:**
-    - 각 노드 그룹은 Kubernetes의 nodeSelector 및 taints 설정으로 애플리케이션과 데이터베이스를 분리.
+    - 각 노드 그룹은 Kubernetes의 nodeSelector 설정으로 애플리케이션과 데이터베이스를 분리.
 
 
 
@@ -69,11 +69,9 @@ terraform apply -auto-approve
 ####  테스트
 - EKS 클러스터가 정상적으로 생성되었는 지 확인
 ![aws eks](image-1.png)
-- 클러스터 리소스 상태 확인
-![kubectl get all](image.png)
-
+- EKS 노드 그룹이 정상적으로 생성되었는지 확인
+![alt text](image-3.png)
 ### 2. 애플리케이션 배포
-![alt text](image-2.png)
 **Helm Chart 구성**
 - **Rust API 서버:**
     -  `LoadBalancer` 서비스를 통해 외부 트래픽 허용.
@@ -94,4 +92,24 @@ postgresql 배포를 위해 **Bitnami Helm Chart**를 사용했습니다.
 ```bash
 helm upgrade --install rust-api . --values values.yaml
 ```
+#### 테스트
+- API 서버 Health Check 
+![alt text](image-4.png)
 
+- API 서버 CRUD
+1. 사용자 생성
+![alt text](image-5.png)
+
+2.사용자 정보 수정
+![alt text](image-7.png)
+
+3. 특정 사용자 조회
+![alt text](image-8.png)
+
+4.사용자 삭제
+![alt text](image-10.png)
+
+- 클러스터 리소스 상태 확인
+![kubectl get all](image.png)
+- 리소스 분리 확인
+![alt text](image-2.png)
