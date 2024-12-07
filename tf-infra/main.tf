@@ -65,7 +65,7 @@ module "eks" {
       max_size     = 2
       desired_size = 1
       labels = {
-        purpose = "api-server"
+        app = "api-server"
       }
     }
 
@@ -78,7 +78,7 @@ module "eks" {
       max_size     = 2
       desired_size = 1
       labels = {
-        purpose = "db"
+        app = "db"
       }
     }
   }
